@@ -17,14 +17,14 @@ app.use(
 app.use(
   "/juice",
   createProxyMiddleware({
-    target: "http://juice",
+    target: "http://juice:3000",
     changeOrigin: true,
   })
 );
 app.use(
   "/juiceweb",
   createProxyMiddleware({
-    target: "http://juiceweb",
+    target: "http://juiceweb:3000",
     changeOrigin: true,
   })
 );
