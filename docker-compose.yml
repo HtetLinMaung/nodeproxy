@@ -38,6 +38,8 @@ services:
       - "7070:7070"
   startup:
     image: htetlinmaung/startup:1.0.0
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 volumes:
   iamdb:
   postgresdb:
