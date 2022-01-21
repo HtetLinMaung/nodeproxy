@@ -10,7 +10,7 @@ const app = express();
 app.use(
   "/startup",
   createProxyMiddleware({
-    target: "http://startup",
+    target: "http://startup:3000",
     changeOrigin: true,
   })
 );
