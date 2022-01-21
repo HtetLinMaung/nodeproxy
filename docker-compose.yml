@@ -36,6 +36,8 @@ services:
     image: htetlinmaung/nodeproxy:1.0.0
     ports:
       - "7070:7070"
+  startup:
+    image: htetlinmaung/startup:1.0.0
 volumes:
   iamdb:
   postgresdb:
