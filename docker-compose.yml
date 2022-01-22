@@ -35,7 +35,7 @@ services:
   nodeproxy:
     image: htetlinmaung/nodeproxy:1.0.0
     ports:
-      - "7070:7070"
+      - "7070:80"
   startup:
     image: htetlinmaung/startup:1.0.0
     volumes:
@@ -46,6 +46,8 @@ services:
       - /app/storage/public:/app/public
   juice:
     image: htetlinmaung/juice:1.0.0
+    ports:
+      - "7071:80"
 
 volumes:
   iamdb:
