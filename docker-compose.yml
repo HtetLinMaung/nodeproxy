@@ -40,7 +40,15 @@ services:
     image: htetlinmaung/startup:1.0.0
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      
+  storage:
+    image: htetlinmaung/storage:1.0.0
+    volumes:
+      - /app/storage/public:/app/public
+  juice:
+    image: htetlinmaung/juice:1.0.0
+  juiceweb:
+    image: htetlinmaung/juiceweb:1.0.0
+
 volumes:
   iamdb:
   postgresdb:
