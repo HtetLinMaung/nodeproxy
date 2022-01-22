@@ -17,14 +17,14 @@ app.use(
 app.use(
   "/storage",
   createProxyMiddleware({
-    target: "http://storage",
+    target: "http://storage:80",
     changeOrigin: true,
   })
 );
 app.use(
   "/juice",
   createProxyMiddleware({
-    target: "http://juice",
+    target: "http://juice:80",
     changeOrigin: true,
   })
 );
