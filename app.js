@@ -15,9 +15,16 @@ app.use(
   })
 );
 app.use(
+  "/storage",
+  createProxyMiddleware({
+    target: "http://storage",
+    changeOrigin: true,
+  })
+);
+app.use(
   "/juice",
   createProxyMiddleware({
-    target: "http://juice:3000",
+    target: "http://juice",
     changeOrigin: true,
   })
 );
