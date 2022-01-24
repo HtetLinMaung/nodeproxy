@@ -35,6 +35,13 @@ app.use(
     changeOrigin: true,
   })
 );
+app.use(
+  "/pyopenai",
+  createProxyMiddleware({
+    target: "http://pyopenai",
+    changeOrigin: true,
+  })
+);
 
 app.use(cors());
 app.use(express.json());
