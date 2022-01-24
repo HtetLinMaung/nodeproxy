@@ -7,40 +7,28 @@ const PORT = process.env.PORT || 7070;
 
 const app = express();
 
+const createProxyOptions = (target) => ({
+  target,
+  changeOrigin: true,
+  proxyTimeout: 1864 * 100000,
+});
+
 app.use(
   "/startup",
-  createProxyMiddleware({
-    target: "http://startup:3000",
-    changeOrigin: true,
-  })
+  createProxyMiddleware(createProxyOptions("http://startup:3000"))
 );
 app.use(
   "/storage",
-  createProxyMiddleware({
-    target: "http://storage:80",
-    changeOrigin: true,
-  })
+  createProxyMiddleware(createProxyOptions("http://storage"))
 );
-app.use(
-  "/juice",
-  createProxyMiddleware({
-    target: "http://juice:80",
-    changeOrigin: true,
-  })
-);
+app.use("/juice", createProxyMiddleware(createProxyOptions("http://juice")));
 app.use(
   "/juiceweb",
-  createProxyMiddleware({
-    target: "http://juiceweb:3000",
-    changeOrigin: true,
-  })
+  createProxyMiddleware(createProxyOptions("http://juiceweb:3000"))
 );
 app.use(
   "/pyopenai",
-  createProxyMiddleware({
-    target: "http://pyopenai",
-    changeOrigin: true,
-  })
+  createProxyMiddleware(createProxyOptions("http://pyopenai"))
 );
 
 app.use(cors());
