@@ -26,6 +26,7 @@ app.use(
   "/juiceweb",
   createProxyMiddleware(createProxyOptions("http://juiceweb:3000"))
 );
+app.use("/openai", createProxyMiddleware(createProxyOptions("http://openai")));
 app.use(
   "/pyopenai",
   createProxyMiddleware(createProxyOptions("http://pyopenai"))

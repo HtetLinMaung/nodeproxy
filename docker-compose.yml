@@ -50,6 +50,8 @@ services:
       - "7071:80"
   pyopenai:
     image: htetlinmaung/pyopenai:1.0.0
+  openai:
+    image: htetlinmaung/openai:1.0.0
 
 volumes:
   iamdb:
