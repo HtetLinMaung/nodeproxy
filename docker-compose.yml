@@ -54,6 +54,10 @@ services:
     image: htetlinmaung/openai:1.0.0
     volumes:
       - /app/openai/public:/app/public
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
 
 volumes:
   iamdb:
