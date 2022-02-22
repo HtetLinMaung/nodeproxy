@@ -61,9 +61,12 @@ services:
   musifyserver:
     image: htetlinmaung/musifyserver:1.0.0
     volumes:
-      - /app/musifyserver/storage:/app/storage
+      - /home/hlm/app/musifyserver/storage:/app/storage
     ports:
       - "3002:3002"
+    environment:
+      - DB_CONNECTION=mongodb://mongo:27017/musifydb
+      
 
 volumes:
   iamdb:
