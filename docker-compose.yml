@@ -58,6 +58,12 @@ services:
     image: redis:alpine
     ports:
       - "6379:6379"
+  musifyserver:
+    image: htetlinmaung/musifyserver:1.0.0
+    volumes:
+      - /app/musifyserver/storage:/app/storage
+    ports:
+      - "3002:3002"
 
 volumes:
   iamdb:
