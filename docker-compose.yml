@@ -66,6 +66,12 @@ services:
       - "3002:3002"
     environment:
       - DB_CONNECTION=mongodb://mongo:27017/musifydb
+  fetchit:
+    image: htetlinmaung/fetchit:1.0.0
+    ports:
+      - "4001:3000"
+    environment:
+      - REDIS_URL=redis://redis:6379
       
 
 volumes:
