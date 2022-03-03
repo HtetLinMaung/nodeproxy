@@ -17,7 +17,7 @@ services:
     volumes:
       - postgresdb:/var/lib/postgresql/data
   proxy:
-    image: htetlinmaung/proxy
+    image: htetlinmaung/proxy:1.0.0
     ports:
       - "80:80"
   iam:
