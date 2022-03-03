@@ -72,6 +72,8 @@ services:
       - "4001:3000"
     environment:
       - REDIS_URL=redis://redis:6379
+  animelux:
+    image: htetlinmaung/animelux:1.0.0
       
 
 volumes:
