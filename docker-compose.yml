@@ -82,6 +82,7 @@ services:
       - DB_CONNECTION=mongodb://mongo:27017/appmanagementdb
       - JWT_SECRET=09f46a0a2d4b8b1cdd8a002e35da18b6
     volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
       - /app/appmanagement/storage:/app/storage
       
 
