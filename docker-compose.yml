@@ -85,6 +85,15 @@ services:
       - /app/prettyapiserver/public:/app/public
   prettyapi:
     image: htetlinmaung/prettyapi:1.0.0
+  appmanagement:
+    image: htetlinmaung/appmanagement:1.0.0
+    ports:
+      - "3020:3020"
+    environment:
+      - DB_CONNECTION=mongodb://mongo:27017/appmanagementdb
+      - JWT_SECRET=09f46a0a2d4b8b1cdd8a002e35da18b6
+    volumes:
+      - /app/appmanagement/storage:/app/storage
       
 
 volumes:
